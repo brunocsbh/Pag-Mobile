@@ -1,0 +1,16 @@
+<Alloy>
+	<Window id="WinErro" class="container">
+		<Toolbar platform="ios" borderTop="true" borderBottom="false" top="0" barColor="1AFFA8" zIndex="99">
+			<Items>
+				<Button id="cancel" onClick="btnCancel_onClick" systemButton="Ti.UI.iPhone.SystemButton.CANCEL" />
+				<FlexSpace/>
+				<Label id="lblTituloToolbar" text="Pag!" />
+				<FlexSpace/>
+				<Label text="" />
+			</Items>
+		</Toolbar>
+		<View class="container" zIndex="0">
+			<Label id="lblMensagem" text="QrCode inválido!"></Label>
+		</View>
+	</Window>
+</Alloy>

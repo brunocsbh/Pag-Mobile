@@ -1,0 +1,13 @@
+".container": {
+	backgroundColor: "#E2FFDC"
+}
+
+"#lblTituloToolbar": {
+	text: 'Pag!',
+	color: '#FFFFFF',
+	font: {
+		fontSize: '14dp',
+		fontWeight: 'bold'
+	},
+	textAlign: 'center'
+}

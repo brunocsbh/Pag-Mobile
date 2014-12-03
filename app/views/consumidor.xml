@@ -1,0 +1,11 @@
+<Alloy>
+	<Window id="WinConsumidor" class="container">
+		<Toolbar platform="ios" borderTop="true" borderBottom="false" top="0" barColor="1AFFA8">
+			<Items>
+				<Button id="btnCancel" onClick="doCloseWindow" systemButton="Ti.UI.iPhone.SystemButton.CANCEL" />
+				<FlexSpace/>
+				<Label id="lblTituloToolbar" text="Pag!" center="true" />
+			</Items>
+		</Toolbar>
+	</Window>
+</Alloy>
