@@ -1,28 +1,22 @@
 <Alloy>
 	<TabGroup id="tabGroup">
-		<Tab id="tabPagamento" title="Pagamento" icon="ico_tab_pagamento30.png" active="true" onFocus="tabPagamento_onFocus" onBlur="tabPagamento_onBlur">
-			<Window id="winPagamento" title="Pagamento">
-				<View id="vwScan">
-				</View>
+		<Tab title="Pagamento" icon="ico_pagamento.png" active="true" onFocus="tabPagamento_onFocus" onBlur="tabPagamento_onBlur">
+			<Window title="Pagamento">
+				<View id="vwScan"></View>
 			</Window>
 		</Tab>
-		<Tab id="tabHistorico" title="Histório" icon="ico_tab_historico30.png">
-			<Window id="winHistorico" title="Histório">
-				<Label id="lblInstrucao01">
-				</Label>
-				<Button id="btnIniciarPagamento" onClick="btnIniciarPagamento_onClick">
-				</Button>
-				<Button id="btnBuscarConsumidor" onClick="btnBuscarConsumidor_onClick">
-				</Button>
+		<Tab title="Histório" icon="ico_historico.png">
+			<Window title="Histório">
+				<Label id="lblInstrucao01"></Label>
+				<Button id="btnIniciarPagamento" onClick="btnIniciarPagamento_onClick" title="Iniciar!!!" zIndex="99"></Button>
+				<Button id="btnBuscarConsumidor" onClick="btnBuscarConsumidor_onClick" title="Buscar!!!" zIndex="99"></Button>
 			</Window>
 		</Tab>
-		<Tab id="tabConfiguracoes" title="Configurações" icon="ico_tab_configuracoes30.png">
-			<Window id="winConfiguracoes" title="Seus dados">
-			</Window>
+		<Tab title="Cartões" icon="ico_cartoes.png">
+			<Window title="Cartões de Crédito"></Window>
 		</Tab>
-		<Tab id="tabMais" title="Mais" icon="ico_tab_configuracoes30.png">
-			<Window id="winConfiguracoes" title="Mais">
-			</Window>
+		<Tab title="Mais" icon="ico_mais.png">
+			<Window title="Mais Opções"></Window>
 		</Tab>
 	</TabGroup>
 </Alloy>

@@ -24,30 +24,6 @@
 	bottom: 40
 }
 
-"#btnCancelScan":{
-	title: 'Cancelar',
-	textAlign: 'center',
-	color: '#000',
-	backgroundColor: '#fff',
-	style: 0,
-	font: {
-		fontWeight: 'bold',
-		fontSize: 16
-	},
-	borderColor: '#000',
-	borderRadius: 10,
-	borderWidth: 1,
-	opacity: 0.5,
-	width: 220,
-	height: 30,
-	bottom: 20
-}
-
-"#winPrincipal":{
-	top: 0,
-	left: 0
-}
-
 "#lblInstrucao01": {
 	text: 'Não precisa chamar o garçom. Evite filas, pague sua conta agora!',
 	font: {

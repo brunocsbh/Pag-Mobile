@@ -15,20 +15,20 @@ function btnIniciarPagamento_onClick() {
 
 function tabPagamento_onFocus() {
 	/*
-	barcode.capture(loadConsumidorSearch, $.vwScan, function(err, data) {
-		if (!err) {
-			var winConsumidor = Alloy.createController('consumidor').getView();
-			winConsumidor.initView(data);
-			winConsumidor.open();
-		} else {
-			ExibirWindowErro();
-		}
-	});
-	*/
+	 barcode.capture(loadConsumidorSearch, $.vwScan, function(err, data) {
+	 if (!err) {
+	 var winConsumidor = Alloy.createController('consumidor').getView();
+	 winConsumidor.initView(data);
+	 winConsumidor.open();
+	 } else {
+	 ExibirWindowErro();
+	 }
+	 });
+	 */
 }
 
 function tabPagamento_onBlur() {
-	barcode.cancel();
+	/*barcode.cancel();*/
 }
 
 function ExibirWindowErro() {
@@ -65,7 +65,7 @@ function loadConsumidorSearch(p_qrcode, cb) {
 		} else if (data.length == 0) {
 			console.log('log data: ');
 			console.log(data);
-			alert('QrCode não encontrado.');
+			/* alert('QrCode não encontrado.');*/
 			cb('QrCode não encontrado.', null);
 		} else {
 			console.log(data[0]);
