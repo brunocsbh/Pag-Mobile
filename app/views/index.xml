@@ -2,21 +2,30 @@
 	<TabGroup id="tabGroup">
 		<Tab title="Pagamento" icon="ico_pagamento.png" active="true" onFocus="tabPagamento_onFocus" onBlur="tabPagamento_onBlur">
 			<Window title="Pagamento">
-				<View id="vwScan"></View>
+				<Label id="lblInstrucao01"></Label>
+				<Button id="btnIniciarPagamento" onClick="btnIniciarPagamento_onClick"></Button>
+				<Button id="btnBuscarConsumidor" onClick="btnBuscarConsumidor_onClick"></Button>
 			</Window>
 		</Tab>
 		<Tab title="Histório" icon="ico_historico.png">
-			<Window title="Histório">
-				<Label id="lblInstrucao01"></Label>
-				<Button id="btnIniciarPagamento" onClick="btnIniciarPagamento_onClick" title="Iniciar!!!" zIndex="99"></Button>
-				<Button id="btnBuscarConsumidor" onClick="btnBuscarConsumidor_onClick" title="Buscar!!!" zIndex="99"></Button>
-			</Window>
+			<Window title="Histório" backgroundColor="silver"></Window>
 		</Tab>
 		<Tab title="Cartões" icon="ico_cartoes.png">
-			<Window title="Cartões de Crédito"></Window>
+			<Window title="Cartões de Crédito" backgroundColor="blue"></Window>
 		</Tab>
 		<Tab title="Mais" icon="ico_mais.png">
-			<Window title="Mais Opções"></Window>
+			<Window title="Mais Opções" backgroundColor="green"></Window>
 		</Tab>
 	</TabGroup>
+	<View id="vwScan">
+		<Toolbar platform="ios" borderTop="true" borderBottom="false" top="0">
+			<Items>
+				<Button onClick="btnCancelScan_onClick" systemButton="Ti.UI.iPhone.SystemButton.CANCEL" />
+				<FlexSpace/>
+				<Label id="lblTituloToolbar" text="Pag!" />
+				<FlexSpace/>
+				<Label text="" />
+			</Items>
+		</Toolbar>
+	</View>
 </Alloy>
