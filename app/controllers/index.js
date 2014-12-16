@@ -13,24 +13,6 @@ function btnIniciarPagamento_onClick() {
 	});
 }
 
-function tabPagamento_onFocus() {
-	/*
-	 barcode.capture(loadConsumidorSearch, $.vwScan, function(err, data) {
-	 if (!err) {
-	 var winConsumidor = Alloy.createController('consumidor').getView();
-	 winConsumidor.initView(data);
-	 winConsumidor.open();
-	 } else {
-	 ExibirWindowErro();
-	 }
-	 });
-	 */
-}
-
-function tabPagamento_onBlur() {
-	/*barcode.cancel();*/
-}
-
 function ExibirWindowErro() {
 	var winErro = Alloy.createController('erro').getView();
 	winErro.open();

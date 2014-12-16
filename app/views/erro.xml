@@ -10,7 +10,7 @@
 			</Items>
 		</Toolbar>
 		<View class="container" zIndex="0">
-			<Label id="lblMensagem" text="QrCode inválido!"></Label>
+			<Label text="QrCode inválido!"></Label>
 		</View>
 	</Window>
 </Alloy>

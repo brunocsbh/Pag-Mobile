@@ -1,6 +1,6 @@
 <Alloy>
 	<TabGroup id="tabGroup">
-		<Tab title="Pagamento" icon="ico_pagamento.png" active="true" onFocus="tabPagamento_onFocus" onBlur="tabPagamento_onBlur">
+		<Tab title="Pagamento" icon="ico_pagamento.png" active="true">
 			<Window title="Pagamento">
 				<Label id="lblInstrucao01"></Label>
 				<Button id="btnIniciarPagamento" onClick="btnIniciarPagamento_onClick"></Button>
