@@ -1,20 +1,26 @@
 <Alloy>
 	<TabGroup id="tabGroup">
-		<Tab title="Pagamento" icon="ico_pagamento.png" active="true">
-			<Window title="Pagamento">
-				<Label id="lblInstrucao01"></Label>
-				<Button id="btnIniciarPagamento" onClick="btnIniciarPagamento_onClick"></Button>
-				<Button id="btnBuscarConsumidor" onClick="btnBuscarConsumidor_onClick"></Button>
+		<Tab id="tabPagamento" title="Pagamento" icon="ico_pagamento.png" active="true">
+			<Window title="Pagamento" class="winTab">
+				<View id="vwInstrucaoCadastro" class="vwDefault" visible="false">
+					<Label class="labelPergunta" text="Vamos começar?"></Label>
+					<Label id="lblOrientacaoInstrucaoCadastro" class="lblOrientacaoInstrucao"></Label>
+					<Button title="Cadastrar cartão" onClick="btnCadastrarCartao_onClick" class="buttonConfirma"></Button>
+				</View>
+				<View id="vwIniciarPagamento" class="vwDefault" visible="false">
+					<Button id="btnIniciarPagamento" onClick="btnIniciarPagamento_onClick"></Button>
+					<Button id="btnBuscarConsumidor" onClick="btnBuscarConsumidor_onClick"></Button>
+				</View>
 			</Window>
 		</Tab>
 		<Tab title="Histório" icon="ico_historico.png">
-			<Window title="Histório" backgroundColor="silver"></Window>
+			<Window title="Histório" class="winTab"></Window>
 		</Tab>
-		<Tab title="Cartões" icon="ico_cartoes.png">
-			<Window title="Cartões de Crédito" backgroundColor="blue"></Window>
+		<Tab id="tabCartoes" title="Cartões" icon="ico_cartoes.png">
+			<Window title="Cartões de Crédito" bclass="winTab"></Window>
 		</Tab>
 		<Tab title="Mais" icon="ico_mais.png">
-			<Window title="Mais Opções" backgroundColor="green"></Window>
+			<Window title="Mais Opções" class="winTab"></Window>
 		</Tab>
 	</TabGroup>
 	<View id="vwScan">

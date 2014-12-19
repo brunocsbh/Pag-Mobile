@@ -1,10 +1,40 @@
-".container": {
-	backgroundColor: '#3E5169'
+".winTab":{
+	backgroundColor: '#FFFFFF'
+}
+
+".vwDefault":{
+	width: Ti.UI.SIZE,
+	height: '100%',
+	top: 0,
+	right: 0,
+	bottom: 0,
+	left: 0,
+	backgroundColor: '#FFFFFF'
+}
+
+".labelPergunta": {
+	color: '#555555',
+	font: {
+		fontSize: '20dp'
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	top: 10
+}
+
+".lblOrientacaoInstrucao": {		
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,	
+	width: '95%'
+}
+
+".buttonConfirma": {		
+	bottom: 5
 }
 
 "Label": {
-	backgroundColor: "#4C4C4C"
-},
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#555555"
+}
 
 "#vwScan":{
 	backgroundColor: 'transparent',
@@ -21,14 +51,13 @@
 
 "#btnBuscarConsumidor":{
 	title: 'Buscar consumidor',
-	bottom: 40
+	bottom: 30
 }
 
-"#lblInstrucao01": {
-	text: 'Não precisa chamar o garçom. Evite filas, pague sua conta agora!',
-	font: {
-		fontSize: '16dp'
-	}
+"#lblOrientacaoInstrucaoCadastro": {
+	text: 'Você ainda não tem nenhum cartão cadastrado. Precisamos que você cadastre seu cartão antes de inicarmos o pagamento.',	
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,	
+	top: 40
 }
 
 "#lblTituloToolbar": {
@@ -38,5 +67,5 @@
 		fontSize: '14dp',
 		fontWeight: 'bold'
 	},
-	textAlign: 'center'
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }

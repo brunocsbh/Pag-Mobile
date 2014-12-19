@@ -1,6 +1,22 @@
 var webapi = require('webapi');
 var barcode = require('barcode');
 
+$.tabPagamento.addEventListener('focus', function(e) {
+	//Verifica dados cadastrados e carrega view correspondente
+	if (1 == 1) {
+		$.vwInstrucaoCadastro.setVisible(true);
+		$.vwIniciarPagamento.setVisible(false);
+	} else {
+		$.vwInstrucaoCadastro.setVisible(false);
+		$.vwIniciarPagamento.setVisible(true);
+	}
+
+});
+
+function btnCadastrarCartao_onClick() {
+	$.tabCartoes.setActive(true);
+}
+
 function btnIniciarPagamento_onClick() {
 	barcode.capture(loadConsumidorSearch, $.vwScan, function(err, data) {
 		if (!err) {
