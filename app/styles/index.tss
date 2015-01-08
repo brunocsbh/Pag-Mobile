@@ -21,12 +21,12 @@
 	top: 10
 }
 
-".lblOrientacaoInstrucao": {		
-	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,	
+".lblOrientacaoInstrucao": {
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
 	width: '95%'
 }
 
-".buttonConfirma": {		
+".buttonConfirma": {
 	bottom: 5
 }
 
@@ -44,9 +44,8 @@
 	left: 0
 }
 
-"#btnIniciarPagamento":{
-	title: 'Iniciar Pagamento!',
-	bottom: 10
+"#btnLerCodigo":{
+	title: 'Ler código'
 }
 
 "#btnBuscarConsumidor":{
@@ -54,9 +53,13 @@
 	bottom: 30
 }
 
-"#lblOrientacaoInstrucaoCadastro": {
-	text: 'Você ainda não tem nenhum cartão cadastrado. Precisamos que você cadastre seu cartão antes de inicarmos o pagamento.',	
-	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,	
+"#lblInstrucaoCadastro": {
+	text: 'Você não tem nenhum cartão cadastrado. Precisamos que você cadastre seu cartão antes de inicarmos o pagamento.',
+	top: 40
+}
+
+"#lblInstrucaoSolicitacao": {
+	text: 'Começe lendo o código da mesa ou cartão individual.',
 	top: 40
 }
 

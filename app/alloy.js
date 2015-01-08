@@ -21,3 +21,19 @@ Alloy.Globals.ErrorCodes = {};
 Alloy.Globals.ErrorCodes.Unknown = 11;
 Alloy.Globals.ErrorCodes.NoInternetConnection = 12;
 Alloy.Globals.ErrorCodes.BadServerResponse = 13;
+
+// Function to test if device is iOS 7 or later
+Alloy.Globals.IsiOS7 = function() {
+	// iOS-specific test
+	if (Titanium.Platform.name == 'iPhone OS') {
+		var version = Titanium.Platform.version.split(".");
+		var major = parseInt(version[0], 10);
+		// Can only test this support on a 3.2+ device
+		if (major >= 7) {
+			return true;
+		}
+	}
+	return false;
+};
+
+Alloy.Globals.TheTop = Alloy.Globals.IsiOS7() ? 20 : 0;

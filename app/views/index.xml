@@ -3,13 +3,15 @@
 		<Tab id="tabPagamento" title="Pagamento" icon="ico_pagamento.png" active="true">
 			<Window title="Pagamento" class="winTab">
 				<View id="vwInstrucaoCadastro" class="vwDefault" visible="false">
-					<Label class="labelPergunta" text="Vamos começar?"></Label>
-					<Label id="lblOrientacaoInstrucaoCadastro" class="lblOrientacaoInstrucao"></Label>
-					<Button title="Cadastrar cartão" onClick="btnCadastrarCartao_onClick" class="buttonConfirma"></Button>
+					<Label class="labelPergunta" text="Vamos começar?" />
+					<Label id="lblInstrucaoCadastro" class="lblOrientacaoInstrucao" />
+					<Button title="Cadastrar cartão" onClick="btnCadastrarCartao_onClick" class="buttonConfirma" />
 				</View>
 				<View id="vwIniciarPagamento" class="vwDefault" visible="false">
-					<Button id="btnIniciarPagamento" onClick="btnIniciarPagamento_onClick"></Button>
-					<Button id="btnBuscarConsumidor" onClick="btnBuscarConsumidor_onClick"></Button>
+					<Label class="labelPergunta" text="Vamos solicitar sua conta?" />
+					<Label id="lblInstrucaoSolicitacao" class="lblOrientacaoInstrucao" />
+					<Button id="btnLerCodigo" onClick="btnLerCodigo_onClick" class="buttonConfirma" />
+					<Button id="btnBuscarConsumidor" onClick="btnBuscarConsumidor_onClick" />
 				</View>
 			</Window>
 		</Tab>
@@ -17,14 +19,16 @@
 			<Window title="Histório" class="winTab"></Window>
 		</Tab>
 		<Tab id="tabCartoes" title="Cartões" icon="ico_cartoes.png">
-			<Window title="Cartões de Crédito" bclass="winTab"></Window>
+			<Window title="Cartões de Crédito" bclass="winTab">
+				
+			</Window>
 		</Tab>
 		<Tab title="Mais" icon="ico_mais.png">
 			<Window title="Mais Opções" class="winTab"></Window>
 		</Tab>
 	</TabGroup>
 	<View id="vwScan">
-		<Toolbar platform="ios" borderTop="true" borderBottom="false" top="0">
+		<Toolbar id="tbScan" platform="ios" borderTop="true" borderBottom="false" top="0" extendBackground="true">
 			<Items>
 				<Button onClick="btnCancelScan_onClick" systemButton="Ti.UI.iPhone.SystemButton.CANCEL" />
 				<FlexSpace/>

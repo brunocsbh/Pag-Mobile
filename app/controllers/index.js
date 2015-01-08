@@ -1,23 +1,28 @@
 var webapi = require('webapi');
 var barcode = require('barcode');
 
+$.tabGroup.addEventListener('open', function(e) {
+	if (Titanium.Platform.name == 'iPhone OS') {
+		$.tbScan.top = Alloy.Globals.TheTop;
+	}
+});
+
 $.tabPagamento.addEventListener('focus', function(e) {
 	//Verifica dados cadastrados e carrega view correspondente
-	if (1 == 1) {
-		$.vwInstrucaoCadastro.setVisible(true);
-		$.vwIniciarPagamento.setVisible(false);
+	if (1 == 2) {
+		$.vwInstrucaoCadastro.show();
+		//$.vwIniciarPagamento.setVisible(false);
 	} else {
-		$.vwInstrucaoCadastro.setVisible(false);
-		$.vwIniciarPagamento.setVisible(true);
+		$.vwIniciarPagamento.show();
+		//$.vwInstrucaoCadastro.setVisible(false);
 	}
-
 });
 
 function btnCadastrarCartao_onClick() {
 	$.tabCartoes.setActive(true);
 }
 
-function btnIniciarPagamento_onClick() {
+function btnLerCodigo_onClick() {
 	barcode.capture(loadConsumidorSearch, $.vwScan, function(err, data) {
 		if (!err) {
 			var winConsumidor = Alloy.createController('consumidor').getView();
@@ -35,7 +40,7 @@ function ExibirWindowErro() {
 }
 
 function btnBuscarConsumidor_onClick() {
-	loadConsumidorSearch('http://www.pagaai.com.br/?id=1213-1-19x', function(err, data) {
+	loadConsumidorSearch('http://www.pagaai.com.br/?id=1213-1-19', function(err, data) {
 		if (!err) {
 			var winConsumidor = Alloy.createController('consumidor').getView();
 			winConsumidor.initView(data);
@@ -71,7 +76,5 @@ function loadConsumidorSearch(p_qrcode, cb) {
 		}
 	});
 }
-
-/*$.winPrincipal.contentHeight = Ti.Platform.displayCaps.platformHeight - 20;*/
 
 $.tabGroup.open();
