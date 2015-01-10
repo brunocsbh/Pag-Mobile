@@ -1,11 +1,10 @@
 var webapi = require('webapi');
 var barcode = require('barcode');
+Ti.include("mask.js");
 
-$.tabGroup.addEventListener('open', function(e) {
-	if (Titanium.Platform.name == 'iPhone OS') {
-		$.tbScan.top = Alloy.Globals.TheTop;
-	}
-});
+if ($.tbScan) {
+	$.tbScan.top = Alloy.Globals.TheTop;
+}
 
 $.tabPagamento.addEventListener('focus', function(e) {
 	//Verifica dados cadastrados e carrega view correspondente
@@ -17,6 +16,19 @@ $.tabPagamento.addEventListener('focus', function(e) {
 		//$.vwInstrucaoCadastro.setVisible(false);
 	}
 });
+
+$.txtCartao.addEventListener("change", function() {
+	Mask.mask($.txtCartao, Mask.postcode);
+});
+
+$.txtTitular.addEventListener("change", function() {
+	Mask.mask($.txtTitular, Mask.postcode);
+});
+
+$.txtValidade.addEventListener("change", function() {
+	Mask.mask($.txtValidade, Mask.postcode);
+});
+
 
 function btnCadastrarCartao_onClick() {
 	$.tabCartoes.setActive(true);

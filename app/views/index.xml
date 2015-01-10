@@ -1,5 +1,10 @@
 <Alloy>
 	<TabGroup id="tabGroup">
+		<Menu id="menu" platform="android">
+			<!-- Cannot specify node text.  Use attributes only. -->
+			<MenuItem id="saveitem" title="Save" icon="item1.png" />
+			<MenuItem id="closeitem" title="Close" icon="item1.png" />
+		</Menu>
 		<Tab id="tabPagamento" title="Pagamento" icon="ico_pagamento.png" active="true">
 			<Window title="Pagamento" class="winTab">
 				<View id="vwInstrucaoCadastro" class="vwDefault" visible="false">
@@ -20,10 +25,14 @@
 		</Tab>
 		<Tab id="tabCartoes" title="Cartões" icon="ico_cartoes.png">
 			<Window title="Cartões de Crédito" bclass="winTab">
-				
+				<View class="vwDefault">
+					<TextField id="txtCartao" hintText="Número do cartão" clearButtonMode="Ti.UI.INPUT_BUTTONMODE_ONFOCUS" keyboardType="Ti.UI.KEYBOARD_NUMBER_PAD" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="10" center="true" width="95%" height="60" />
+					<TextField id="txtTitular" hintText="Nome do titular impresso no cartão" clearButtonMode="Ti.UI.INPUT_BUTTONMODE_ONFOCUS" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="80" center="true" width="95%" height="60" />
+					<TextField id="txtValidade" hintText="Validade (MM/YY)" clearButtonMode="Ti.UI.INPUT_BUTTONMODE_ONFOCUS" keyboardType="Ti.UI.KEYBOARD_NUMBER_PAD" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="150" center="true" width="95%" height="60" />
+				</View>
 			</Window>
 		</Tab>
-		<Tab title="Mais" icon="ico_mais.png">
+		<Tab title="Mais" icon="ico_mais.png" platform="ios">
 			<Window title="Mais Opções" class="winTab"></Window>
 		</Tab>
 	</TabGroup>
