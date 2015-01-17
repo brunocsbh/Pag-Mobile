@@ -37,3 +37,6 @@ Alloy.Globals.IsiOS7 = function() {
 };
 
 Alloy.Globals.TheTop = Alloy.Globals.IsiOS7() ? 20 : 0;
+
+
+

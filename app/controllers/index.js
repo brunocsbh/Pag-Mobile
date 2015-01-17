@@ -1,6 +1,16 @@
 var webapi = require('webapi');
 var barcode = require('barcode');
+var util = require('util');
 Ti.include("mask.js");
+
+//Chama função sem preocupar com retorno. Usado no iniciar do app.
+util.getTokenApp(function(err, data) {
+	if (!err) {
+		console.log('Token gerado no iniciar do app');
+		console.log(data);
+		return data;
+	}
+});
 
 if ($.tbScan) {
 	$.tbScan.top = Alloy.Globals.TheTop;
@@ -18,17 +28,12 @@ $.tabPagamento.addEventListener('focus', function(e) {
 });
 
 $.txtCartao.addEventListener("change", function() {
-	Mask.mask($.txtCartao, Mask.postcode);
-});
-
-$.txtTitular.addEventListener("change", function() {
-	Mask.mask($.txtTitular, Mask.postcode);
+	Mask.mask($.txtCartao, Mask.creditcard);
 });
 
 $.txtValidade.addEventListener("change", function() {
-	Mask.mask($.txtValidade, Mask.postcode);
+	Mask.mask($.txtValidade, Mask.creditcardvalid);
 });
-
 
 function btnCadastrarCartao_onClick() {
 	$.tabCartoes.setActive(true);
@@ -52,6 +57,20 @@ function ExibirWindowErro() {
 }
 
 function btnBuscarConsumidor_onClick() {
+	Ti.App.Properties.removeProperty('TokenApp');
+
+	util.getTokenApp(function(err, data) {
+		if (!err) {
+			var winConsumidor = Alloy.createController('consumidor').getView();
+			winConsumidor.initView(data);
+			winConsumidor.open();
+		} else {
+			ExibirWindowErro();
+		}
+	});
+}
+
+function btnBuscarConsumidor_onClick____OLD() {
 	loadConsumidorSearch('http://www.pagaai.com.br/?id=1213-1-19', function(err, data) {
 		if (!err) {
 			var winConsumidor = Alloy.createController('consumidor').getView();
@@ -87,6 +106,45 @@ function loadConsumidorSearch(p_qrcode, cb) {
 			cb(false, data[0]);
 		}
 	});
+}
+
+function teste() {
+	//Gera token com verificacao do retorno
+	util.getTokenApp(function(err, data) {
+		if (!err) {
+			var winConsumidor = Alloy.createController('consumidor').getView();
+			winConsumidor.initView(data);
+			winConsumidor.open();
+		} else {
+			ExibirWindowErro();
+		}
+	});
+}
+
+function hideKeyboard(){
+	$.txtTitular.blur();
+	$.txtCartao.blur();
+	$.txtValidade.blur();
+}
+
+function btnProxCartao()
+{
+	$.txtTitular.focus();	
+}
+
+function btnAntTitular()
+{
+	$.txtCartao.focus();	
+}
+
+function btnProxTitular()
+{
+	$.txtValidade.focus();	
+}
+
+function btnAntValidade()
+{
+	$.txtTitular.focus();	
 }
 
 $.tabGroup.open();

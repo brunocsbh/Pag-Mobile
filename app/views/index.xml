@@ -21,14 +21,47 @@
 			</Window>
 		</Tab>
 		<Tab title="Histório" icon="ico_historico.png">
-			<Window title="Histório" class="winTab"></Window>
+			<Window title="Histórico" class="winTab"></Window>
 		</Tab>
 		<Tab id="tabCartoes" title="Cartões" icon="ico_cartoes.png">
 			<Window title="Cartões de Crédito" bclass="winTab">
 				<View class="vwDefault">
-					<TextField id="txtCartao" hintText="Número do cartão" clearButtonMode="Ti.UI.INPUT_BUTTONMODE_ONFOCUS" keyboardType="Ti.UI.KEYBOARD_NUMBER_PAD" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="10" center="true" width="95%" height="60" />
-					<TextField id="txtTitular" hintText="Nome do titular impresso no cartão" clearButtonMode="Ti.UI.INPUT_BUTTONMODE_ONFOCUS" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="80" center="true" width="95%" height="60" />
-					<TextField id="txtValidade" hintText="Validade (MM/YY)" clearButtonMode="Ti.UI.INPUT_BUTTONMODE_ONFOCUS" keyboardType="Ti.UI.KEYBOARD_NUMBER_PAD" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="150" center="true" width="95%" height="60" />
+					<TextField id="txtCartao" hintText="Número do cartão" maxLength="19" clearButtonMode="Ti.UI.INPUT_BUTTONMODE_ONFOCUS" keyboardType="Ti.UI.KEYBOARD_NUMBER_PAD" returnKeyType="Titanium.UI.RETURNKEY_DONE" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="10" center="true" width="95%" height="40">
+						<KeyboardToolbar >
+							<Toolbar>
+								<Items >
+									<Button enabled="false">Anterior</Button>
+									<Button onClick="btnProxCartao">Próximo</Button>
+									<FlexSpace/>
+									<Button onClick="hideKeyboard">OK</Button>
+								</Items>
+							</Toolbar>
+						</KeyboardToolbar>
+					</TextField>
+					<TextField id="txtTitular" hintText="Nome do titular impresso no cartão" maxLength="50" clearButtonMode="Ti.UI.INPUT_BUTTONMODE_ONFOCUS" returnKeyType="Titanium.UI.RETURNKEY_DONE" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="55" center="true" width="95%" height="40">
+						<KeyboardToolbar >
+							<Toolbar >
+								<Items >
+									<Button onClick="btnAntTitular">Anterior</Button>
+									<Button onClick="btnProxTitular">Próximo</Button>
+									<FlexSpace/>
+									<Button onClick="hideKeyboard">OK</Button>
+								</Items>
+							</Toolbar>
+						</KeyboardToolbar>
+					</TextField>
+					<TextField id="txtValidade" hintText="Validade (MM/YY)" maxLength="5" clearButtonMode="Ti.UI.INPUT_BUTTONMODE_ONFOCUS" keyboardType="Ti.UI.KEYBOARD_NUMBER_PAD" returnKeyType="Titanium.UI.RETURNKEY_DONE" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="100" center="true" width="95%" height="40">
+						<KeyboardToolbar >
+							<Toolbar >
+								<Items >
+									<Button onClick="btnAntValidade">Anterior</Button>
+									<Button enabled="false">Próximo</Button>
+									<FlexSpace/>
+									<Button onClick="hideKeyboard">OK</Button>
+								</Items>
+							</Toolbar>
+						</KeyboardToolbar>
+					</TextField>
 				</View>
 			</Window>
 		</Tab>
