@@ -121,30 +121,83 @@ function teste() {
 	});
 }
 
-function hideKeyboard(){
+function hideKeyboard() {
 	$.txtTitular.blur();
 	$.txtCartao.blur();
 	$.txtValidade.blur();
 }
 
-function btnProxCartao()
-{
-	$.txtTitular.focus();	
+function btnProxCartao() {
+	$.txtTitular.focus();
 }
 
-function btnAntTitular()
-{
-	$.txtCartao.focus();	
+function btnAntTitular() {
+	$.txtCartao.focus();
 }
 
-function btnProxTitular()
-{
-	$.txtValidade.focus();	
+function btnProxTitular() {
+	$.txtValidade.focus();
 }
 
-function btnAntValidade()
-{
-	$.txtTitular.focus();	
+function btnAntValidade() {
+	$.txtTitular.focus();
+}
+
+var token = function() {
+	var tk = Ti.App.Properties.getString('TokenApp');
+	if (tk && tk != '') {
+		console.log('Token properties');
+		return tk;
+	} else {
+		webapi.postConsumidor(objConsumidor, function(err, data) {
+			console.log('Token API');
+			if (err) {
+				console.log('Erro API token');
+				util.exibirMensagemCodigo(err);
+			} else {
+				console.log('Sucesso API token');
+				return data.Conteudo;
+			}
+		});
+	}
+};
+
+function cadastrarCartaoCredito() {
+	if ($.txtTitular.value != '' && $.txtCartao.value != '' && $.txtValidade.value != '') {
+		console.log('Entrou if');
+		//Para cadastrar o cartao deve-se fazer:
+		//1- Pegar o token
+
+		util.getTokenApp(function(err, tokenApp) {
+			if (err) {
+				console.log('Erro API token');
+				util.exibirMensagemCodigo(err);
+			} else {
+				console.log('TOKEN!: ' + tokenApp);
+
+				//2- Chamar API p cadastrar cartao
+				var cartao = {
+					Nome : $.txtTitular.value,
+					Numero : $.txtCartao.value,
+					DataValidade : $.txtValidade.value
+				};
+				console.log(cartao);
+				webapi.postCartao(tokenApp, cartao, function(err, data) {
+					if (err) {
+						console.log('Erro API cartao');
+						console.log(err);
+						util.exibirMensagem('Erro', JSON.parse(err).MensagemErro);
+					} else {
+						console.log('Sucesso API cartao');
+						util.exibirMensagem('Cartão cadastrado', 'Cartão de crédito cadastrado com sucesso.');
+					}
+				});
+			}
+		});
+
+	} else {
+		util.exibirMensagemCodigo(Alloy.Globals.ErrorCodes.DadosIncompletos);
+	}
 }
 
 $.tabGroup.open();

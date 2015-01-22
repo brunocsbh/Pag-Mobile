@@ -9,7 +9,7 @@
 // object. For example:
 //
 // Alloy.Globals.someGlobalFunction = function(){};
-Alloy.Globals.WebApiBaseAddress = 'http://pagws.herokuapp.com/api/';
+Alloy.Globals.WebApiBaseAddress = 'http://api.pagaai.com.br/api/v1/';
 
 Alloy.Globals.WebApiErrorCodes = {};
 Alloy.Globals.WebApiErrorCodes.Unknown = 1;
@@ -18,6 +18,7 @@ Alloy.Globals.WebApiErrorCodes.CollectionError = 3;
 Alloy.Globals.WebApiErrorCodes.CommandError = 4;
 
 Alloy.Globals.ErrorCodes = {};
+Alloy.Globals.ErrorCodes.DadosIncompletos = 1;
 Alloy.Globals.ErrorCodes.Unknown = 11;
 Alloy.Globals.ErrorCodes.NoInternetConnection = 12;
 Alloy.Globals.ErrorCodes.BadServerResponse = 13;

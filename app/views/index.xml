@@ -6,7 +6,7 @@
 			<MenuItem id="closeitem" title="Close" icon="item1.png" />
 		</Menu>
 		<Tab id="tabPagamento" title="Pagamento" icon="ico_pagamento.png" active="true">
-			<Window title="Pagamento" class="winTab">
+			<Window title="Pagamento">
 				<View id="vwInstrucaoCadastro" class="vwDefault" visible="false">
 					<Label class="labelPergunta" text="Vamos começar?" />
 					<Label id="lblInstrucaoCadastro" class="lblOrientacaoInstrucao" />
@@ -21,15 +21,15 @@
 			</Window>
 		</Tab>
 		<Tab title="Histório" icon="ico_historico.png">
-			<Window title="Histórico" class="winTab"></Window>
+			<Window title="Histórico"></Window>
 		</Tab>
 		<Tab id="tabCartoes" title="Cartões" icon="ico_cartoes.png">
-			<Window title="Cartões de Crédito" bclass="winTab">
+			<Window title="Cartões de Crédito">
 				<View class="vwDefault">
-					<TextField id="txtCartao" hintText="Número do cartão" maxLength="19" clearButtonMode="Ti.UI.INPUT_BUTTONMODE_ONFOCUS" keyboardType="Ti.UI.KEYBOARD_NUMBER_PAD" returnKeyType="Titanium.UI.RETURNKEY_DONE" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="10" center="true" width="95%" height="40">
-						<KeyboardToolbar >
+					<TextField id="txtCartao" class="txtCartaoDone">
+						<KeyboardToolbar>
 							<Toolbar>
-								<Items >
+								<Items>
 									<Button enabled="false">Anterior</Button>
 									<Button onClick="btnProxCartao">Próximo</Button>
 									<FlexSpace/>
@@ -38,10 +38,10 @@
 							</Toolbar>
 						</KeyboardToolbar>
 					</TextField>
-					<TextField id="txtTitular" hintText="Nome do titular impresso no cartão" maxLength="50" clearButtonMode="Ti.UI.INPUT_BUTTONMODE_ONFOCUS" returnKeyType="Titanium.UI.RETURNKEY_DONE" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="55" center="true" width="95%" height="40">
-						<KeyboardToolbar >
-							<Toolbar >
-								<Items >
+					<TextField id="txtTitular" class="txtCartaoDone">
+						<KeyboardToolbar>
+							<Toolbar>
+								<Items>
 									<Button onClick="btnAntTitular">Anterior</Button>
 									<Button onClick="btnProxTitular">Próximo</Button>
 									<FlexSpace/>
@@ -50,10 +50,10 @@
 							</Toolbar>
 						</KeyboardToolbar>
 					</TextField>
-					<TextField id="txtValidade" hintText="Validade (MM/YY)" maxLength="5" clearButtonMode="Ti.UI.INPUT_BUTTONMODE_ONFOCUS" keyboardType="Ti.UI.KEYBOARD_NUMBER_PAD" returnKeyType="Titanium.UI.RETURNKEY_DONE" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="100" center="true" width="95%" height="40">
-						<KeyboardToolbar >
-							<Toolbar >
-								<Items >
+					<TextField id="txtValidade" class="txtCartaoDone">
+						<KeyboardToolbar>
+							<Toolbar>
+								<Items>
 									<Button onClick="btnAntValidade">Anterior</Button>
 									<Button enabled="false">Próximo</Button>
 									<FlexSpace/>
@@ -62,11 +62,14 @@
 							</Toolbar>
 						</KeyboardToolbar>
 					</TextField>
+					<Button title="Cadastrar cartão" onClick="cadastrarCartaoCredito" width="95%" bottom="10"></Button>
 				</View>
 			</Window>
 		</Tab>
 		<Tab title="Mais" icon="ico_mais.png" platform="ios">
-			<Window title="Mais Opções" class="winTab"></Window>
+			<Window title="Mais Opções">
+				<TextField class="txtCartaoDone"></TextField>
+			</Window>
 		</Tab>
 	</TabGroup>
 	<View id="vwScan">

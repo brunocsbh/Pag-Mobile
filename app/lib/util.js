@@ -34,4 +34,61 @@ function getTokenApp(cb) {
 	}
 };
 
+function exibirMensagem(titMsg, msg) {
+	if (titMsg && msg) {
+		Ti.UI.createAlertDialog({
+			message : msg,
+			title : titMsg,
+			ok : 'OK'
+		}).show();
+	}
+}
+
+function exibirMensagemCodigo(codigoMensagem) {
+	if (codigoMensagem) {
+		Ti.UI.createAlertDialog({
+			message : getMsgErro(codigoMensagem),
+			title : getTituloMsgErro(codigoMensagem),
+			ok : 'OK'
+		}).show();
+	}
+}
+
+function getMsgErro(codigoMensagem) {
+	if (codigoMensagem) {
+		switch (codigoMensagem) {
+		case 1:
+			return 'Favor preencher os dados.';
+			break;
+		case 12:
+			return 'Verifique sua configuração de internet.';
+			break;
+		default :
+			return 'Erro durante execução.';
+		}
+
+	} else
+		return 'Erro durante execução.';
+}
+
+function getTituloMsgErro(codigoMensagem) {
+	if (codigoMensagem) {
+		switch (codigoMensagem) {
+		case 1:
+			return 'Dados incompletos';
+			break;
+		case 12:
+			return 'Sem sinal de internet';
+			break;
+		default :
+			return 'Erro.';
+		}
+
+	} else
+		return 'Código da mensagem não encontrado.';
+
+}
+
 exports.getTokenApp = getTokenApp;
+exports.exibirMensagem = exibirMensagem;
+exports.exibirMensagemCodigo = exibirMensagemCodigo;
